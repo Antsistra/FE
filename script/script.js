@@ -32,3 +32,20 @@ function navLinkClick() {
     navToggler.click();
   }
 }
+var btn = $("#topBtn");
+
+$(window).scroll(function () {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    btn.addClass("show");
+  } else {
+    btn.removeClass("show");
+  }
+});
+
+btn.on("click", function (e) {
+  e.preventDefault();
+  $("html, body").animate({ scrollTop: 0 }, "300");
+});
